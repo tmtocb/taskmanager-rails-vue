@@ -8,11 +8,6 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  # GET /tasks/1
-  # GET /tasks/1.json
-  def show
-  end
-
   # POST /tasks
   # POST /tasks.json
   def create
