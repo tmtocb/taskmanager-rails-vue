@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     methods: {
+      listTasks: function() {
+        Api.listTasks().then(function(response){
+          app.tasks = response;
+        })
+      },
       clear: function(){
         this.task = {};
         this.action = 'create';
@@ -94,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this.message = `Task ${id} updated.`
         }
       }
-    }
+    },
+    beforeMount() { this.listTasks() }
   })
 });  
